@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to G-ID</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .header {
+            background-color: #0074E4;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .content {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-section {
+            margin-top: 20px;
+        }
+
+        .feature {
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .back-button,
+        .create-id-button {
+            text-align: center;
+        }
+
+        .back-button button,
+        .create-id-button button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to G-ID</h1>
+    </div>
+
+    <div class="content">
+        <section>
+            <p>G-ID is your identity in the digital world, where you can create your unique ID and share your photos and videos with friends and family on various social media platforms.</p>
+            <p>Here's what G-ID has to offer:</p>
+        </section>
+
+        <div class="feature-section">
+            <div class="feature">
+                <h2>Create Your Identity</h2>
+                <p>Build your separate ID on G-ID to showcase your personality and interests.</p>
+            </div>
+
+            <div class="feature">
+                <h2>Share Fitness Journey</h2>
+                <p>Document and share your fitness journey with the world. Post photos and videos to inspire others on their fitness quests.</p>
+            </div>
+
+            <div class="feature">
+                <h2>Track Your Fitness</h2>
+                <p>Use G-ID to track your fitness progress. Monitor your achievements and set new goals for a healthier lifestyle.</p>
+            </div>
+
+            <div class="feature">
+                <h2>Connect with Friends and Family</h2>
+                <p>Stay connected with loved ones through G-ID. Share moments, updates, and achievements with your social circle.</p>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <div class="back-button">
+                <button onclick="goToSecondPage()">Back</button>
+            </div>
+            <div class="create-id-button">
+                <button onclick="goToCreateID()">Create Your Own G-ID</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goToSecondPage() {
+            window.location.href = '2ndpage.html';
+        }
+
+        function goToCreateID() {
+            window.location.href = 'signID.html';
+        }
+    </script>
+</body>
+</html>

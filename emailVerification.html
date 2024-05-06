@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style/emailverify.css">
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
+    <style>* {
+      margin: 0;
+      padding: 0;
+      font-family: "Roboto", sans-serif;
+    }
+    .main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100vh;
+      background-color: #f0f2f5;
+    }
+    .div-1 {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+      width: 450px;
+      padding: 15px;
+      margin-right: 20px;
+      max-width: 500px;
+      min-width: 200px;
+    }
+    .ppp {
+      font-size: smaller;
+    }
+    .div-2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    img {
+      padding: 10px;
+      margin-bottom: 5px;
+    }
+    #bold {
+      font-weight: bold;
+    }
+    #emailid {
+      color: #3360f8;
+      font-weight: bold;
+    }
+    .buttondiv {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .button {
+      background-color: #3360f8;
+      color: white;
+      width: 45%;
+      border: none;
+      padding: 8px;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="div-1">
+          <div class="div-2">
+            <img src="../icons/email.png" width="70px" />
+            <h3>Please verify your email</h3>
+            <p id="ppp">
+              You're almost there! We sent an email to
+              <span id="emailid"></span>
+            </p>
+            <br />
+            <p>
+              Just click on the link in that email to complete your signup. If you
+              don't see it, you may need to
+              <span id="bold">check your inbox </span>folder.
+            </p>
+          </div>
+          <p id="message"></p>
+          <div class="buttondiv">
+            <button class="button" onClick="resend()">Resend Email</button>
+            <button class="button" onClick="reloud()">Confirm</button>
+          </div>
+        </div>
+      </div>
+      <script src="firebase.js"></script>
+      <script src="email.js"></script>
+</body>
+</html>

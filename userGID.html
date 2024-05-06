@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .header {
+            background-color: #0074E4;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .content {
+            max-width: 90%;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            margin-top: 80px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .user-options {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .option {
+            margin-right: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #0074E4;
+        }
+
+        .additional-options {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: lightblue;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bottom-icons {
+            display: flex;
+            justify-content: space-between;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #fff;
+            padding: 10px;
+            box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .bottom-icons img, .bottom-icons span {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>User Profile</h1>
+    </div>
+
+    <div class="content">
+        <div class="user-profile">
+            <img class="user-image" src="user_profile_picture.jpg" alt="User Profile Picture">
+            <!-- Add more user profile details here -->
+        </div>
+
+        <div class="user-options">
+            <div class="option" onclick="goToPosts()">Posts</div>
+            <div class="option" onclick="goToFollowers()">Followers GID</div>
+            <div class="option" onclick="goToFollowing()">Following GID</div>
+        </div>
+
+        <div class="additional-options">
+            <div class="option" onclick="goToProgress()">See Your Progress</div>
+            <div class="option" onclick="goToCalories()">Track Your Calories</div>
+        </div>
+    </div>
+
+    <div class="bottom-icons">
+        <img src="home.png" alt="Home" onclick="goToHome()">
+        <img src="search.png" alt="Search" onclick="goToSearch()">
+        <img src="notification.png" alt="Notification" onclick="goToNotifications()">
+        <img src="settings.png" alt="Settings" onclick="goToSettings()">
+        <span onclick="goToUserGID()">G-ID</span>
+    </div>
+
+    <script>
+        function goToHome() {
+            window.location.href = 'homeGID.html';
+        }
+
+        function goToSearch() {
+            window.location.href = 'searchGID.html';
+        }
+
+        function goToNotifications() {
+            window.location.href = 'notification.html';
+        }
+
+        function goToSettings() {
+            window.location.href = 'settings.html';
+        }
+
+        function goToUserGID() {
+            window.location.href = 'userGID.html';
+        }
+
+        function goToPosts() {
+            window.location.href = 'postGID.html';
+        }
+
+        function goToFollowers() {
+            window.location.href = 'GIDfollower.html';
+        }
+
+        function goToFollowing() {
+            window.location.href = 'GIDfollowing.html';
+        }
+
+        function goToProgress() {
+            window.location.href = 'progressGID.html';
+        }
+
+        function goToCalories() {
+            window.location.href = 'https://www.calculator.net/calorie-calculator.html';
+        }
+    </script>
+</body>
+</html>

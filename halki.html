@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create G-ID</title>
+    <style>
+        body { 
+            background-image: url('dummy.jpg');
+
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .header {
+            background-color: #0074E4;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .content {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-group button {
+            background-color: #0074E4;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Creating G-ID</h1>
+    </div>
+
+    <div class="content">
+        <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="dob">D.O.B (Date of Birth):</label>
+            <input type="date" id="dob" name="dob" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">email:</label>
+            <input type="text" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <div class="form-group">
+            <button onclick="signUp()">Sign Up</button>
+        </div>
+
+        <div class="form-group">
+            <button onclick="goBack()">Back</button>
+        </div>
+    </div>
+
+    <script>
+        function signUp() {
+            // Implement your sign-up logic here
+            // For example, you can redirect to another page after successful sign-up
+            window.location.href = 'userDashboard.html';
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyBRw3EO3AJHDHYW_Qm27FGPL9fuOyIhtok",
+    authDomain: "authentication-app-86baa.firebaseapp.com",
+    databaseURL: "https://authentication-app-86baa-default-rtdb.firebaseio.com",
+    projectId: "authentication-app-86baa",
+    storageBucket: "authentication-app-86baa.appspot.com",
+    messagingSenderId: "238057026458",
+    appId: "1:238057026458:web:eef3ffb7e6df16351d8023"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
+</html>

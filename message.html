@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direct Messages</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fafafa;
+            color: #333;
+        }
+
+        .header {
+            background-color: #0095f6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .content {
+            max-width: 90%;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            margin-top: 80px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .message-container {
+            margin-top: 20px;
+        }
+
+        .message {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .message img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .message-text {
+            background-color: #dbf4fd;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 70%;
+        }
+
+        .no-messages {
+            text-align: center;
+            margin-top: 20px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Direct Messages</h1>
+    </div>
+
+    <div class="content">
+        <div class="message-container">
+            <!-- Display messages here -->
+            <!-- Example: -->
+            <div class="message">
+                <img src="user1.jpg" alt="User 1">
+                <div class="message-text">Hey, how are you?</div>
+            </div>
+            <div class="message">
+                <img src="user2.jpg" alt="User 2">
+                <div class="message-text">Can we catch up later?</div>
+            </div>
+        </div>
+
+        <div class="no-messages">
+            <p>No messages yet.</p>
+        </div>
+    </div>
+</body>
+</html>

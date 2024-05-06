@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Your BMI</title>
+    <style>
+        .header {
+
+background-color: #007bff;
+color: white;
+padding: 50px;
+text-align: center;
+font-size: 24px;
+margin-top: 0px;
+}
+        body {
+           
+            background-size: cover;
+            background-position: center;
+            /* Add other background styles as needed */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: rgba(255,255,255); /* Update background color to be transparent */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0,0.8);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #0056b3;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+        }
+
+        #fitnessGoal {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+      
+    </style>
+</head>
+<body>
+    <h1 class="header">Fitness Tracker</h1>
+    <div class="container">
+        <form id="bmiForm">
+            <label for="age">Age:</label>
+            <input type="number" id="age" placeholder="Enter your age">
+
+            <label for="gender">Gender:</label>
+            <select id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+
+            <label for="feet">Height (feet):</label>
+            <input type="number" id="feet" placeholder="Feet" required>
+
+            <label for="inches">(inches):</label>
+            <input type="number" id="inches" placeholder="Inches" required>
+
+            <label for="weight">Weight (in kilograms):</label>
+            <input type="number" id="weight" step="0.1" placeholder="Enter your weight" required>
+
+            <button type="button" onclick="calculateBMI()">Calculate BMI</button>
+        </form>
+
+        <div id="result"></div>
+
+        <div id="fitnessGoal">
+            <button onclick="chooseFitnessGoal()">Click here to choose your fitness goal according to your BMI</button>
+        </div>
+    </div>
+
+    <script>
+        function calculateBMI() {
+            var age = parseInt(document.getElementById('age').value);
+            var feet = parseInt(document.getElementById('feet').value);
+            var inches = parseInt(document.getElementById('inches').value);
+            var weight = parseFloat(document.getElementById('weight').value);
+
+            // Convert feet and inches to meters
+            var heightInMeters = (feet * 0.3048) + (inches * 0.0254);
+
+            // Calculate BMI
+            var bmi = weight / (heightInMeters * heightInMeters);
+
+            // Display BMI
+            document.getElementById('result').innerText = 'Your BMI is: ' + bmi.toFixed(2);
+        }
+
+        function chooseFitnessGoal() {
+            // Redirect to a page where the user can choose their fitness goal based on their BMI
+            window.location.href = '2ndpage.html';
+        }
+    </script>
+</body>
+</html>

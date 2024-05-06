@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G-ID Social</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .header {
+            background-color: #0074E4;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .user-image {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .user-images-container {
+            display: flex;
+            justify-content: flex-start;
+            margin-bottom: 20px;
+            overflow-x: auto; /* Enable horizontal scrolling on smaller screens */
+        }
+
+        .message-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .search-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .search-button {
+            background-color: #0074E4;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .bottom-icons {
+            display: flex;
+            justify-content: space-around;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            padding: 10px;
+            box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .bottom-icons img, .bottom-icons span {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 600px) {
+            .user-images-container {
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>G-ID Social</h1>
+    </div>
+
+    <div class="content">
+        <div class="user-images-container">
+            <img class="user-image" src="user1.jpg" alt="User 1">
+            <img class="user-image" src="user2.jpg" alt="User 2">
+            <img class="user-image" src="user3.jpg" alt="User 3">
+            <!-- Add more user images as needed -->
+        </div>
+
+        <img class="message-icon" src="message.png" alt="Message" onclick="goToMessages()">
+
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search G-IDs...">
+            <button class="search-button" onclick="searchGIDs()">Search</button>
+        </div>
+
+        <!-- Display search results or posts here -->
+
+    </div>
+
+    <div class="bottom-icons">
+        <img src="home.png" alt="Home" onclick="goToHome()">
+        <img src="search.png" alt="Search" onclick="goToSearch()">
+        <img src="notification.png" alt="Notification" onclick="goToNotifications()">
+        <img src="settings.png" alt="Settings" onclick="goToSettings()">
+        <a href="userGID.html">G-ID</a>
+    </div>
+
+    <script>
+        function goToMessages() {
+            window.location.href = 'message.html';
+        }
+
+        function goToHome() {
+            window.location.href = 'homeGID.html';
+        }
+
+        function goToSearch() {
+            window.location.href = 'searchGID.html';
+        }
+
+        function goToNotifications() {
+            window.location.href = 'notification.html';
+        }
+
+        function goToSettings() {
+            window.location.href = 'settings.html';
+        }
+
+        function goToUserGID() {
+            window.location.href = 'userGID.html';
+        }
+
+        function searchGIDs() {
+            // Implement the search functionality here
+            // Redirect or display search results accordingly
+        }
+    </script>
+</body>
+</html>

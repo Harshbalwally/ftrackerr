@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Your BMI</title>
+    <style>
+        body
+             {
+            background-image: url('dummy.jpg');
+            background-size: cover;
+            background-position: center;
+            /* Add other background styles as needed */
+        }
+         {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: rgba(255,255,255);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+        }
+
+        h1 {
+            text-align: center;
+           
+      }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+        }
+
+        #fitnessGoal {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="font-size: 70px;">Fitness Tracker</h1> <!-- Display Fitness Tracker as heading -->
+    <div class="container">
+        <h2 >Calculate Your BMI</h2> <!-- Update heading to H2 for sub-heading -->
+        <form id="bmiForm">
+            <label for="age">Age:</label>
+            <input type="number" id="age" placeholder="Enter your age">
+
+            <label for="gender">Gender:</label>
+            <select id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+
+            <label for="height">Height (in meters):</label>
+            <input type="number" id="height" step="0.01" placeholder="Enter your height" required>
+
+            <label for="weight">Weight (in kilograms):</label>
+            <input type="number" id="weight" step="0.1" placeholder="Enter your weight" required>
+
+            <button type="button" onclick="calculateBMI()">Calculate BMI</button>
+        </form>
+
+        <div id="result"></div>
+
+        <div id="fitnessGoal">
+            <button onclick="chooseFitnessGoal()">Click here to choose your fitness goal according to your BMI</button>
+        </div>
+    </div>
+
+    <script>
+        function calculateBMI() {
+            var age = parseInt(document.getElementById('age').value) || 0;
+            var gender = document.getElementById('gender').value;
+            var height = parseFloat(document.getElementById('height').value);
+            var weight = parseFloat(document.getElementById('weight').value);
+
+            if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
+                document.getElementById('result').innerHTML = 'Please enter valid height and weight.';
+                return;
+            }
+
+            // BMI calculation
+            var bmi = weight / (height * height);
+
+            // Display BMI
+            var resultMsg = 'Your BMI is: ' + bmi.toFixed(2);
+
+            // BMI Categories and Suggestions
+            if (bmi < 18.5) {
+                resultMsg += ' (Underweight)';
+                // Example: Suggest to gain weight for underweight individuals
+                resultMsg += ' - Consider gaining weight.';
+            } else if (bmi >= 18.5 && bmi < 25) {
+                resultMsg += ' (Normal weight)';
+                // Example: Suggest to maintain weight for normal weight individuals
+                resultMsg += ' - Maintain your weight.';
+            } else if (bmi >= 25 && bmi < 30) {
+                resultMsg += ' (Overweight)';
+                // Example: Suggest to lose weight for overweight individuals
+                resultMsg += ' - Consider losing weight.';
+            } else {
+                resultMsg += ' (Obese)';
+                // Example: Suggest to lose weight for obese individuals
+                resultMsg += ' - Consider losing weight.';
+            }
+
+            document.getElementById('result').innerHTML = resultMsg;
+        }
+
+        function chooseFitnessGoal() {
+            // Redirect to a page where the user can choose their fitness goal based on their BMI
+            window.location.href = '2ndpage.html';
+        }
+    </script>
+</body>
+</html>
